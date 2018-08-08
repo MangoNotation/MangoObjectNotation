@@ -18,7 +18,10 @@ namespace MangoObjectNotation
 
         public void AddChild(MangoObject child)
         {
-
+            MangoObject[] new_list = new MangoObject[children.Length + 1];
+            children.CopyTo(new_list, children.Length);
+            new_list[children.Length] = child;
+            children = new_list;
         }
 
         public void RemoveChild(int index)
