@@ -23,7 +23,20 @@ namespace MangoObjectNotation
 
         public void RemoveChild(int index)
         {
+            MangoObject[] new_list = new MangoObject[children.Length - 2];
+            bool removed = false;
 
+            for(int i = 0; i < children.Length; i++)
+            {
+                if (i != index && !removed)
+                    new_list[i] = children[i];
+                else if (i == index && !removed)
+                    removed = true;
+                else
+                    new_list[i - 1] = children[i];
+            }
+
+            children = new_list;
         }
         public void RemoveChild(MangoObject child)
         {
