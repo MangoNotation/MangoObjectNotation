@@ -8,6 +8,8 @@ namespace MangoObjectNotation
     {
         public MangoSkeleton Parent { get { return parent; } }
         private MangoSkeleton parent;
+
+        public string RootID { get; set; } //sets id number for object (within given root)
         
         public MangoObject()
         {
