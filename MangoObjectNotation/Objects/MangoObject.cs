@@ -17,21 +17,33 @@ namespace MangoObjectNotation
             children = new MangoObject[0];
         }
 
-        public MangoObject(string Name, string Body, MangoObject Parent)
+        public MangoObject(string Name, string Body, MangoSkeleton parent)
         {
             this.Name = Name;
             this.Body = Body;
-            this.parent = Parent;
+            this.children = new MangoObject[0];
+            SetParent(parent);
         }
 
-        public void setParent()
+        public MangoObject(string Name, string Body, MangoObject parent)
         {
-
+            this.Name = Name;
+            this.Body = Body;
+            this.parent = parent;
         }
 
-        public MangoObject(string rawText)
+        public void SetParent(MangoSkeleton parent)// stops AddChild() and ClearParent() from looping forever
         {
+            ClearParent();
+            this.parent = parent;
+            if(!(parent.HasChild(this)))
+                parent.AddChild(this);
+        }
 
+        public void ClearParent()
+        {
+            parent.RemoveChild(this);
+            parent = null;
         }
     }
 }

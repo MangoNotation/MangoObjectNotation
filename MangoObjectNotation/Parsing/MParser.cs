@@ -23,6 +23,7 @@ namespace MangoObjectNotation.Parsing
         protected MTemp[] TempParse(string rawText)
         {
             splitText = PMethods.Tear(rawText);
+            //Split the string into temporary mango objects
             return null;
         }
 
