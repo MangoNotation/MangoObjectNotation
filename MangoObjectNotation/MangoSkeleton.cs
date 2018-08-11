@@ -18,49 +18,55 @@ namespace MangoObjectNotation
 
         public void AddChild(MangoObject child)
         {
-            if(!(child.Parent == this))
+            try{
+                if (!(child.Parent == this))
+                    child.SetParent(this);
+            }
+            catch(NullReferenceException){
+                //child.Parent is null, set parent to this
                 child.SetParent(this);
-            MangoObject[] new_list = new MangoObject[children.Length + 1];
-            children.CopyTo(new_list, children.Length);
-            new_list[children.Length] = child;
-            children = new_list;
+            }
+            MangoObject[] children_ = new MangoObject[children.Length + 1];
+            children.CopyTo(children_, children.Length);
+            children_[children.Length] = child;
+            children = children_;
         }
 
         public void RemoveChild(int index)
         {
-            MangoObject[] new_list = new MangoObject[children.Length - 1];
+            MangoObject[] children_ = new MangoObject[children.Length - 1];
             bool removed = false;
 
             for(int i = 0; i < children.Length; i++)
             {
                 if (i != index && !removed)
-                    new_list[i] = children[i];
+                    children_[i] = children[i];
                 else if (i == index && !removed)
                     removed = true;
                 else
-                    new_list[i - 1] = children[i];
+                    children_[i - 1] = children[i];
             }
 
-            children = new_list;
+            children = children_;
         }
 
         public void RemoveChild(MangoObject child)
         {
             //removes first instance of a child
-            MangoObject[] new_list = new MangoObject[children.Length - 1];
+            MangoObject[] children_ = new MangoObject[children.Length - 1];
             bool removed = false;
 
             for (int i = 0; i < children.Length; i++)
             {
                 if (Children[i] != child && !removed)
-                    new_list[i] = children[i];
+                    children_[i] = children[i];
                 else if (Children[i] == child && !removed)
                     removed = true;
                 else
-                    new_list[i - 1] = children[i];
+                    children_[i - 1] = children[i];
             }
 
-            children = new_list;
+            children = children_;
         }
 
         public bool HasChild(MangoObject child)

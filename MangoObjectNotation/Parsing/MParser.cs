@@ -8,10 +8,16 @@ namespace MangoObjectNotation.Parsing
     {
         protected MTemp[] Temps;
         private string[] splitText;
+        protected MangoSkeleton BaseParent { get; set; }
+
+        public MParser(MangoSkeleton skeleton)
+        {
+            BaseParent = skeleton;
+        }
 
         public MParser()
         {
-
+            
         }
 
         public MangoObject[] Parse(string rawText)

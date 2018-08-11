@@ -9,7 +9,8 @@ namespace MangoObjectNotation
         public MangoSkeleton Parent { get { return parent; } }
         private MangoSkeleton parent;
 
-        public string RootID { get; set; } //sets id number for object (within given root)
+        public int ObjectStart { get; set; } //finds location in parsed string where object starts
+        public int ObjectEnd { get; set; } //finds location in parsed string that object ends
         
         public MangoObject()
         {
@@ -31,6 +32,17 @@ namespace MangoObjectNotation
             this.Body = Body;
             children = new MangoObject[0];
             parent = null;
+        }
+
+        public MangoObject(string Name, string Body, int Start, int End)
+        {
+            //ideal for making from parsed string;
+            this.Name = Name;
+            this.Body = Body;
+            children = new MangoObject[0];
+            parent = null;
+            ObjectStart = Start;
+            ObjectEnd = End;
         }
 
         public void SetParent(MangoSkeleton parent)// stops AddChild() and ClearParent() from looping forever

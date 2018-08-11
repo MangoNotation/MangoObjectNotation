@@ -1,7 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MangoObjectNotation/Objects/MangoObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MangoObjectNotation/Parsing/MParser.cs">
     <Files>
-      <File FileName="MangoObjectNotation/Objects/MangoObject.cs" Line="1" Column="1" />
+      <File FileName="MangoObjectNotation/Objects/MangoObject.cs" Line="39" Column="51" />
+      <File FileName="MangoObjectNotation/Parsing/MParser.cs" Line="20" Column="13" />
+      <File FileName="MangoObjectNotation/MangoSkeleton.cs" Line="29" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
