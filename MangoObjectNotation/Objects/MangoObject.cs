@@ -53,9 +53,14 @@ namespace MangoObjectNotation
                 parent.AddChild(this);
         }
 
-        public void ClearParent()
+        public void ClearParent()//disassociates object from parent entirely
         {
             parent.RemoveChild(this);
+            parent = null;
+        }
+
+        public void RemoveParent()//sets parent to null, while leaving object as child of prevoius parent
+        {
             parent = null;
         }
     }

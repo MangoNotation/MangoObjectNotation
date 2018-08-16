@@ -42,7 +42,10 @@ namespace MangoObjectNotation
                 if (i != index && !removed)
                     children_[i] = children[i];
                 else if (i == index && !removed)
+                {
                     removed = true;
+                    children[i].RemoveParent();
+                }
                 else
                     children_[i - 1] = children[i];
             }
@@ -61,7 +64,10 @@ namespace MangoObjectNotation
                 if (Children[i] != child && !removed)
                     children_[i] = children[i];
                 else if (Children[i] == child && !removed)
+                {
                     removed = true;
+                    child.RemoveParent();
+                }
                 else
                     children_[i - 1] = children[i];
             }
