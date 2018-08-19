@@ -9,11 +9,24 @@ namespace MangoObjectNotation
     {
         public MangoRoot(string rawText)
         {
-            Parser.Parse(rawText);
+            this.children = Parser.Parse(rawText);
+            Parser.Reset();
             Name = "MangoRoot";
             Body = "";
         }
 
-        private MParser Parser = new MParser();
+        public MangoRoot()
+        {
+            Name = "MangoRoot";
+            Body = "";
+        }
+
+        public void Parse(string rawText)
+        {
+            this.children = Parser.Parse(rawText);
+            Parser.Reset();
+        }
+
+        protected readonly MParser Parser = new MParser();
     }
 }
