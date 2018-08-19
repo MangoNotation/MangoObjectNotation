@@ -4,8 +4,8 @@
       <File FileName="MangoObjectNotation/Objects/MangoObject.cs" Line="45" Column="29" />
       <File FileName="MangoObjectNotation/Parsing/MParser.cs" Line="154" Column="42" />
       <File FileName="MangoObjectNotation/MangoSkeleton.cs" Line="47" Column="48" />
-      <File FileName="MangoObjectNotation/Objects/MangoRoot.cs" Line="31" Column="6" />
-      <File FileName="MangoObjectNotation/MangoDocument.cs" Line="9" Column="10" />
+      <File FileName="MangoObjectNotation/Objects/MangoRoot.cs" Line="30" Column="18" />
+      <File FileName="MangoObjectNotation/MangoDocument.cs" Line="21" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
